@@ -78,12 +78,6 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <script src="./src/users/Users.js"></script>
-    <script src="./src/users/UserController.js"></script>
-    <script src="./src/users/UserService.js"></script>
-    
-    <script type="text/javascript" src="login/login.js"></script>
-
     <script type="text/javascript">
           angular
               .module('starterApp', ['auth0', 'angular-storage', 'angular-jwt', 'ngRoute','ngMaterial', 'users'])
@@ -170,6 +164,12 @@
               });
 
     </script>
+    
+    <script src="./src/users/Users.js"></script>
+    <script src="./src/users/UserController.js"></script>
+    <script src="./src/users/UserService.js"></script>
+    <script type="text/javascript" src="login/login.js"></script>
+
 
   </body>
 </html>
