@@ -23,9 +23,11 @@
 
   </head>
 
-  <body ng-app="starterApp" layout="column" ng-controller="UserController as ul" ng-cloak>
+  <!--<body ng-app="starterApp" layout="column" ng-controller="UserController as ul" ng-cloak>
+  -->
+  <body>
 
-    <md-toolbar layout="row">
+    <!--<md-toolbar layout="row">
       <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
         <md-icon md-svg-icon="menu" ></md-icon>
       </md-button>
@@ -56,6 +58,8 @@
         </md-content>
 
     </div>
+  -->
+    <div class="container" ng-view></div>
 
     <script src="../node_modules/angular/angular.js"></script>
     <script src="../node_modules/angular-animate/angular-animate.js"></script>
@@ -80,7 +84,7 @@
 
     <script type="text/javascript">
           angular
-              .module('starterApp', ['auth0', 'angular-storage', 'angular-jwt', 'ngRoute','ngMaterial', 'users'])
+              .module('starterApp', ['auth0', 'angular-storage', 'angular-jwt', 'ngRoute','ngMaterial', 'sample.home'/*'users'*/])
               .config(function($routeProvider, authProvider, $httpProvider, $locationProvider, jwtInterceptorProvider, $mdThemingProvider, $mdIconProvider){
                   $routeProvider
                       .when( '/', {
@@ -155,16 +159,16 @@
                   }
                 });
               })
-              .controller( 'AppCtrl', function AppCtrl( $scope, $location ) {
+              .controller( 'AppCtrl', function ['$scope',( $scope, $location ) {
                 $scope.$on('$routeChangeSuccess', function(e, nextRoute) {
                   if (nextRoute.$$route && angular.isDefined( nextRoute.$$route.pageTitle )) {
                     $scope.pageTitle=nextRoute.$$route.pageTitle + ' | Auth0 Sample';
                   }
                 });
-              });
+              }]);
 
     </script>
-    
+
     <script src="./src/users/Users.js"></script>
     <script src="./src/users/UserController.js"></script>
     <script src="./src/users/UserService.js"></script>
