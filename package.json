@@ -1,0 +1,10 @@
+{
+  "name": "workflow-elite-website",
+  "private": true,
+  "version": "0.0.1",
+  "description": "workflow elite",
+  "repository": "https://github.com/kjbessinger/workflow-elite-website",
+  "scripts": {
+    "prestart": "npm install"
+  }
+}
